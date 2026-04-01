@@ -424,6 +424,19 @@ function renderWeather(name, country, current) {
   humidityValue.textContent = `${current.relative_humidity_2m}%`;
   windValue.textContent = `${Math.round(current.wind_speed_10m)} mph`;
 
+  const temp = current.temperature_2m;
+const humidity = current.relative_humidity_2m;
+
+// simple dew point formula
+const dewPointCalc = temp - ((100 - humidity) / 5);
+
+document.getElementById("dewPoint").textContent =
+  `${Math.round(dewPointCalc)}°F`;
+const windDeg = current.wind_direction_10m;
+
+document.getElementById("windDirection").textContent =
+  `${Math.round(windDeg)}°`;
+
   // Log what the user should now see
   console.log("Updated DOM values:");
   console.log("City:", cityName.textContent);

@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Weather App</title>
-
   <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -25,28 +24,40 @@
       <div class="left">
         <h2 id="cityName">City</h2>
         <p id="conditionText">Condition</p>
-        <div id="weatherIcon" class="icon"></div>
+        <p id="weatherIcon"></p>
 
         <div class="temp">
           <span id="temperature">--°F</span>
         </div>
+
+        <p id="feelsLike">Feels like --°F</p>
       </div>
 
+      
       <div class="right">
-        <div class="detail">
-          <span>Dew Point</span>
-          <strong id="dewPoint">--°</strong>
+
+        <div class="stat">
+          <div class="row">
+            <p>HUMIDITY</p>
+            <p id="humidityValue">--%</p>
+          </div>
+          <div class="row sub">
+            <p>DEW POINT</p>
+            <p id="dewPoint">--°F</p>
+          </div>
         </div>
 
-        <div class="detail">
-          <span>Wind</span>
-          <strong id="wind">-- mph</strong>
+        <div class="stat">
+          <div class="row">
+            <p>WIND</p>
+            <p id="windValue">-- mph</p>
+          </div>
+          <div class="row sub">
+            <p>DIRECTION</p>
+            <p id="windDirection">--°</p>
+          </div>
         </div>
 
-        <div class="detail">
-          <span>Humidity</span>
-          <strong id="humidity">--%</strong>
-        </div>
       </div>
 
     </section>
