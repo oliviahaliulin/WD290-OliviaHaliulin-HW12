@@ -340,7 +340,7 @@ async function getWeather() {
     // ------------------------------------------------------
     const weatherUrl =
       `https://api.open-meteo.com/v1/forecast?latitude=${latitude}&longitude=${longitude}` +
-      `&current=temperature_2m,apparent_temperature,relative_humidity_2m,weather_code,wind_speed_10m` +
+      `&current=temperature_2m,apparent_temperature,relative_humidity_2m,weather_code,wind_speed_10m,wind_direction_10m` +
       `&temperature_unit=fahrenheit&wind_speed_unit=mph&timezone=auto`;
 
     console.log("Weather URL:", weatherUrl);
@@ -435,7 +435,7 @@ document.getElementById("dewPoint").textContent =
 const windDeg = current.wind_direction_10m;
 
 document.getElementById("windDirection").textContent =
-  `${Math.round(windDeg)}°`;
+  windDeg !== undefined ? `${Math.round(windDeg)}°` : "--";
 
   // Log what the user should now see
   console.log("Updated DOM values:");
